@@ -30,7 +30,7 @@ add_action( 'widgets_init', 'cam_regist_widgets' );
 function cam_regist_widgets(){
 register_nav_menu( 'header_nav_menu', 'Header Menu' );
 register_sidebar(  array(
-	'name'          => __( 'Single Post Sidebar', 'cam' ),
+	'name'          => __( 'Single Post Sidebar', 'cam-theme' ),
 	'id'            => 'single-post-sidebar',    // ID should be LOWERCASE  ! ! !
 	'description'   => '',
         'class'         => '',
@@ -40,7 +40,7 @@ register_sidebar(  array(
 	'after_title'   => '</h4>' ) );
 	
 register_sidebar(  array(
-	'name'          => __( 'Single Page Sidebar', 'cam' ),
+	'name'          => __( 'Single Page Sidebar', 'cam-theme' ),
 	'id'            => 'single-page-sidebar',    // ID should be LOWERCASE  ! ! !
 	'description'   => '',
         'class'         => '',
@@ -50,7 +50,7 @@ register_sidebar(  array(
 	'after_title'   => '</h4>' ) );	
 	
 register_sidebar(  array(
-	'name'          => __( 'Single Portfolio Sidebar', 'cam' ),
+	'name'          => __( 'Single Portfolio Sidebar', 'cam-theme' ),
 	'id'            => 'single-portfolio-sidebar',    // ID should be LOWERCASE  ! ! !
 	'description'   => '',
         'class'         => '',
@@ -61,7 +61,7 @@ register_sidebar(  array(
 	
 // archive should have , ther archives or something
 register_sidebar(  array(
-	'name'          => __( 'Archive Sidebar', 'cam' ),
+	'name'          => __( 'Archive Sidebar', 'cam-theme' ),
 	'id'            => 'archive-post-sidebar',    // ID should be LOWERCASE  ! ! !
 	'description'   => '',
         'class'         => '',
@@ -71,7 +71,7 @@ register_sidebar(  array(
 	'after_title'   => '</h4>' ) );
 
 register_sidebar(  array(
-	'name'          => __( 'Blog Sidebar', 'cam' ),
+	'name'          => __( 'Blog Sidebar', 'cam-theme' ),
 	'id'            => 'blog-post-sidebar',    // ID should be LOWERCASE  ! ! !
 	'description'   => '',
         'class'         => '',
@@ -81,7 +81,7 @@ register_sidebar(  array(
 	'after_title'   => '</h4>' ) );
 	
 	register_sidebar(  array(
-	'name'          => __( 'Footer Column One', 'cam' ),
+	'name'          => __( 'Footer Column One', 'cam-theme' ),
 	'id'            => 'footer-column-one',    // ID should be LOWERCASE  ! ! !
 	'description'   => '',
         'class'         => '',
@@ -92,7 +92,7 @@ register_sidebar(  array(
 	
 	
 		register_sidebar(  array(
-	'name'          => __( 'Footer Column Two', 'cam' ),
+	'name'          => __( 'Footer Column Two', 'cam-theme' ),
 	'id'            => 'footer-column-two',    // ID should be LOWERCASE  ! ! !
 	'description'   => '',
         'class'         => '',
@@ -103,7 +103,7 @@ register_sidebar(  array(
 	
 	
 		register_sidebar(  array(
-	'name'          => __( 'Footer Column Three', 'cam' ),
+	'name'          => __( 'Footer Column Three', 'cam-theme' ),
 	'id'            => 'footer-column-three',    // ID should be LOWERCASE  ! ! !
 	'description'   => '',
         'class'         => '',
@@ -114,7 +114,7 @@ register_sidebar(  array(
 	
 	
 		register_sidebar(  array(
-	'name'          => __( 'Footer Column Four', 'cam' ),
+	'name'          => __( 'Footer Column Four', 'cam-theme' ),
 	'id'            => 'footer-columnourur',    // ID should be LOWERCASE  ! ! !
 	'description'   => '',
         'class'         => '',
@@ -128,10 +128,10 @@ function cam_wp_title($title, $sep){
 	global $page, $paged; 
 	
 	if(is_archive( )){
-		$title = "Archive $title"; 	
+		$title = printf(__("Archive %d",'cam-theme'),$title); 	
 	}
 	else if(is_home( )){
-		$title = "Blog"; 	
+		$title = __("Blog",'cam-theme'); 	
 	}
 	
 	
